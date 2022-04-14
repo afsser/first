@@ -1,0 +1,130 @@
+<meta charset="utf-8">
+<style>
+body {background-color: rgb(192, 230, 174);}
+
+</style>
+
+<h1>CÁLCULO DO IMC</h1>
+
+
+<script>
+
+	function print(a) {
+		document.write(a)
+	}
+
+	function p() {
+		document.write("<br>")
+	}
+
+
+	var peso = parseFloat(prompt("Qual é o seu peso?"))
+	var altura = parseFloat(prompt("Qual é a sua altura?"))
+
+	function imcCalc(altura, peso) {
+		return peso / ( altura * altura )
+	}
+
+	var imc_brut = imcCalc(altura, peso)
+	var imc = imc_brut.toFixed(2)
+
+	console.log(imc)
+
+	function faixa(altura, imc) {
+		return altura * altura * imc
+
+	}
+
+	
+
+	p()
+	print(
+		`<strong><h2>O seu IMC equivale a ${imc}</h2></strong>`
+		)
+
+	print(`<big>
+
+
+
+	Muito a baixo do peso	<strong>16 a 16,9 kg/m2</strong><br>
+	Queda de cabelo, infertilidade, ausência menstrual<br>
+
+	<br>
+	Faixa de Peso:<br>
+	<strong>
+	${(faixa(altura, 16)).toFixed(0)}kg
+	<br>
+	${(faixa(altura, 16.9)).toFixed(0)}kg
+	<br>
+	</strong>
+	<hr>
+	<br>
+
+	Abaixo do peso<strong>	17 a 18,4 kg/m2</strong><br>
+	Fadiga, stress, ansiedade<br>
+	<br>
+	Faixa de Peso:<br>
+	<strong>
+	${(faixa(altura, 17)).toFixed(0)}kg
+	<br>
+	${(faixa(altura, 18.4)).toFixed(0)}kg
+	<br>
+	</strong>
+	<hr>
+	<br>
+
+	Peso normal	<strong>18,5 a 24,9 kg/m2</strong><br>
+	Menor risco de doenças cardíacas e vasculares<br>
+	<br>
+	Faixa de Peso:<br>
+	<strong>
+	${(faixa(altura, 18.5)).toFixed(0)}kg
+	<br>
+	${(faixa(altura, 24.9)).toFixed(0)}kg
+	<br>
+	</strong>
+	<hr>
+	<br>
+
+	Acima do peso<strong> 	25 a 29,9 kg/m2</strong><br>
+	Fadiga, má circulação, varizes<br>
+	<br>
+	Faixa de Peso:<br>
+	<strong>
+	${(faixa(altura, 25)).toFixed(0)}kg
+	<br>
+	${(faixa(altura, 29.9)).toFixed(0)}kg
+	<br>
+	</strong>
+	<hr>
+	<br>
+
+	Obesidade Grau I<strong> 	30 a 34,9 kg/m2</strong><br>
+	Diabetes, angina, infarto, aterosclerose<br>
+	<br>
+	Faixa de Peso:<br>
+	<strong>
+	${(faixa(altura, 30)).toFixed(0)}kg
+	<br>
+	${(faixa(altura, 34.9)).toFixed(0)}kg
+	<br>
+	</strong>
+	<hr>
+
+	<br>
+	Obesidade Grau II<strong> 	35 a 40 kg/m2</strong><br>
+	Apneia do sono, falta de ar<br>
+	<br>
+	Faixa de Peso:<br>
+	<strong>
+	${(faixa(altura, 35)).toFixed(0)}kg
+	<br>
+	${(faixa(altura, 40)).toFixed(0)}kg
+	</strong>	
+
+	</big>`
+	)
+	
+
+</script>
+
